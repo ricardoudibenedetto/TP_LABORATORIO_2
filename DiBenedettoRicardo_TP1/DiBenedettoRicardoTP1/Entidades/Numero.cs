@@ -90,6 +90,7 @@ namespace Entidades
         /// <returns>retorna un string con el numero convertido</returns>
         public string DecimalBinario(double numero)
         {
+            //reutilizar codigo return decimalBinario(string)
             string binario = "";
             int entero = (int)Math.Abs(numero);
             while (entero > 0)
@@ -107,6 +108,7 @@ namespace Entidades
         /// <returns>retornara el valor convertido, caso contrario retorna mensaje de erro</returns>
         public string DecimalBinario(string strNumero)
         {
+            // desarrollar codigo aca
             int numeroTryParse;
             if (int.TryParse(strNumero, out numeroTryParse))
                 return DecimalBinario(numeroTryParse);
