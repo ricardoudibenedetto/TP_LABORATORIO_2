@@ -13,16 +13,27 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// contructor sin parametro que asigna 0 al atributo en el caso de ser invocado
+        /// </summary>
         public Numero() : this(0)
         {
 
         }
 
+        /// <summary>
+        /// Contructor , recibe un string y se lo asigna a SetNumero
+        /// </summary>
+        /// <param name="strNumero">String a guardar </param>
         public Numero(string strNumero)
         {
             this.SetNumero = strNumero;
         }
 
+        /// <summary>
+        /// Contructor, llama al constructor string y le asigna el double recibido
+        /// </summary>
+        /// <param name="numero"></param>
         public Numero(double numero) : this(numero.ToString())
         {
 
@@ -75,7 +86,7 @@ namespace Entidades
                 }
                 else if (!(binario[i] == '0'))
                 {
-                    return "Valor Invalido";
+                    return "¡Valor inválido!";
                 }
                 multiplicador *= 2;
             }
@@ -90,7 +101,6 @@ namespace Entidades
         /// <returns>retorna un string con el numero convertido</returns>
         public string DecimalBinario(double numero)
         {
-            //reutilizar codigo return decimalBinario(string)
             string binario = "";
             int entero = (int)Math.Abs(numero);
             while (entero > 0)
@@ -116,21 +126,45 @@ namespace Entidades
                 return "¡Valor inválido!";
         }
 
+        /// <summary>
+        /// Suma dos objetos Numero
+        /// </summary>
+        /// <param name="n1">Numero a sumar</param>
+        /// <param name="n2">Numero a sumar</param>
+        /// <returns>Resultado de la suma en forma de double</returns>
         public static double operator +(Numero n1, Numero n2)
         {
             return n1.numero + n2.numero;
         }
 
+        /// <summary>
+        /// Resta dos objetos Numero
+        /// </summary>
+        /// <param name="n1">Objeto Numero a restar</param>
+        /// <param name="n2">Objeto Numero a restar</param>
+        /// <returns>Resultado de la resta en forma de double</returns>
         public static double operator -(Numero n1, Numero n2)
         {
             return n1.numero - n2.numero;
         }
 
+        /// <summary>
+        /// Multiplica dos objetos Numero
+        /// </summary>
+        /// <param name="n1">Objeto numero a multiplicar</param>
+        /// <param name="n2">Objeto Numero a multiplicar</param>
+        /// <returns>Resultado de la multiplicacion en forma de double</returns>
         public static double operator *(Numero n1, Numero n2)
         {
             return n1.numero * n2.numero;
         }
 
+        /// <summary>
+        /// Divide dos objetos Numero 
+        /// </summary>
+        /// <param name="n1">Objeto numero a dividir</param>
+        /// <param name="n2">Objeto numero divisor</param>
+        /// <returns>Retorna la division en forma de double , en el caso de tener una division por cero retornara double.MinValue</returns>
         public static double operator /(Numero n1, Numero n2)
         {
             if (n2.numero == 0)

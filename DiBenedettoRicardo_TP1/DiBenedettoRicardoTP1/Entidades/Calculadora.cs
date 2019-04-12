@@ -29,6 +29,13 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Realiza una operacion entre dos objetos Numero
+        /// </summary>
+        /// <param name="num1">Numero uno a operar</param>
+        /// <param name="num2">Numero dos a operar</param>
+        /// <param name="operador">String que realiza la operacion , en caso de no ser +,-,*,/, se realizara una suma</param>
+        /// <returns></returns>
         public static double Operar(Numero num1, Numero num2, string operador)
         {
             double resultado = 0;
