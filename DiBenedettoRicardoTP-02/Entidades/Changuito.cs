@@ -36,7 +36,7 @@ namespace Entidades_2018
         /// <returns></returns>
         public override string ToString()
         {
-            return this.Mostrar(this, ETipo.Todos);
+            return Changuito.Mostrar(this, ETipo.Todos);
         }
         #endregion
 
@@ -49,7 +49,7 @@ namespace Entidades_2018
         /// <param name="c">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Mostrar(Changuito c, ETipo tipo)
+        public static string Mostrar(Changuito c, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -92,12 +92,11 @@ namespace Entidades_2018
         {
             foreach (Producto v in c.productos)
             {
-                if (v == p || c.espacioDisponible == 0)
+                if (v == p || c.espacioDisponible == c.productos.Count)
                     return c;
             }
 
             c.productos.Add(p);
-            c.espacioDisponible -= 1;
             return c;
         }
         /// <summary>
@@ -113,7 +112,6 @@ namespace Entidades_2018
                 if (v == p)
                 {
                     c.productos.Remove(v);
-                    c.espacioDisponible += 1;
                     break;
                 }
             }
