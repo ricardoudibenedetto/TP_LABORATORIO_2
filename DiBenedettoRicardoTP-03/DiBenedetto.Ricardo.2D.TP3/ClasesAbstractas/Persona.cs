@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EntidadesExcepciones;
 namespace EntidadesAbstractas
 {
     public abstract class Persona
@@ -100,8 +100,7 @@ namespace EntidadesAbstractas
             //Si no cumple con ningun caso se lanza la excepcion
             else
             {
-                throw new Exception("invalida dni");
-                //throw new NacionalidadInvalidaExcepcion("Nacionalidad Invalida!");
+                throw new NacionalidadInvalidException("Nacionalidad Invalida!");
             }
         }
 
@@ -114,7 +113,7 @@ namespace EntidadesAbstractas
             {
                 return ValidarDni(nacionalidad, dni);
             }
-            throw new Exception("DNI INVALIIDA EXCEPTION");
+            throw new DniInvalidException("DNI INVALIDA EXCEPTION");
         }
         private string ValidarNombreApellido(string dato)
         {

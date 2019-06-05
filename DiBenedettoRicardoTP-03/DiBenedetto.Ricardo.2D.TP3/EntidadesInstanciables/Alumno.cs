@@ -1,4 +1,4 @@
-﻿using ClasesAbstractas;
+
 using EntidadesAbstractas;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace EntidadesInstanciables
 
         }
         public Alumno(int id, string nombre, string apellido, string dni , ENacionalidad nacionalidad, Universidad.EClases claseQueToma )
-            :base(nombre,apellido, dni,nacionalidad)
+            :base(id, nombre , apellido, dni, nacionalidad)
         {
             this.claseQueToma = claseQueToma;
         }
@@ -41,11 +41,19 @@ namespace EntidadesInstanciables
 
         protected override string ParticipaEnClases()
         {
-            throw new NotImplementedException();
+            return $"TOMA CLASES DE {this.claseQueToma}" ;
         }
 
-
-        #endregion
-
+    public override string ToString()
+    {
+      StringBuilder sb = new StringBuilder();
+      sb.Append(base.ToString());
+      sb.AppendLine(this.ParticipaEnClases());
+      return sb.ToString();
     }
+
+
+    #endregion
+
+  }
 }
