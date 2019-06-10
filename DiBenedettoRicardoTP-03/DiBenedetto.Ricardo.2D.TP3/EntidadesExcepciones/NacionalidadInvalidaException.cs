@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace EntidadesExcepciones
 {
-  public class NacionalidadInvalidException : Exception
+  public class NacionalidadInvalidaException : Exception
   {
-    public NacionalidadInvalidException()
+    public NacionalidadInvalidaException()
       :this("Nacionalidad invalida")
     {
 
     }
-    public NacionalidadInvalidException(string message )
+    public NacionalidadInvalidaException(string message )
       :base(message)
     {
 

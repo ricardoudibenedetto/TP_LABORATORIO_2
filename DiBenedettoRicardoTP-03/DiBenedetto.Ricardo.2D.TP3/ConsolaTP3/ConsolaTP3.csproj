@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDCED8E0-62E1-4F04-8E6A-7289B43E6945}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EntidadesInstanciables</RootNamespace>
-    <AssemblyName>EntidadesInstanciables</AssemblyName>
+    <ProjectGuid>{2FC8157F-128A-4FDD-B892-85CC2A58A922}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsolaTP3</RootNamespace>
+    <AssemblyName>ConsolaTP3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,24 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno.cs" />
-    <Compile Include="Jornada.cs" />
-    <Compile Include="Profesor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Universidad.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClasesAbstractas\EntidadesAbstractas.csproj">
       <Project>{fee73e29-3e94-48c8-b135-9027034b5c5d}</Project>
       <Name>EntidadesAbstractas</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EntidadesArchivos\EntidadesArchivos.csproj">
-      <Project>{5431b897-6adc-4f05-b128-fb0eebb277fd}</Project>
-      <Name>EntidadesArchivos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntidadesExcepciones\EntidadesExcepciones.csproj">
       <Project>{30629d63-beae-4fb5-8a58-a055a8fc1516}</Project>
       <Name>EntidadesExcepciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntidadesInstanciables\EntidadesInstanciables.csproj">
+      <Project>{cdced8e0-62e1-4f04-8e6a-7289b43e6945}</Project>
+      <Name>EntidadesInstanciables</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
